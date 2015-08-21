@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>title</title>
+    <style type="text/css">
+	    .clearfix:after{content:'.';display:block;height:0;clear:both;visibility: hidden;}
+	    .clearfix{*zoom:1;}
+   		body{font-size: 12px;color:#000;line-height: 1.5em;}
+		.wrap{margin:0 auto;width:1000px;}
+		.cont{float: left;width:700px;height:2000px;border:1px solid #000;}
+		.side{float: right;width:280px;}
+		.side-mod{height:300px;border:1px solid #000;margin:0 0 20px 0;}
+		.footer{width: 998px;margin:20px auto;height:800px;border:1px solid #000;}
+		#j_cont_demo{color:red;border:1px solid #000;border-width: 1px 0;text-align: center;line-height: 50px;}
+
+		.fixed{width:700px;position: fixed;top:0;}
+    </style>
+    <script type="text/javascript" src="../scrollfix.js"></script>
+</head>
+<body>
+	<div class="wrap clearfix">
+		<div class="cont" id="j_list">
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			<div class="cont-mod" id="j_cont_demo">
+				滚动到我顶部时，我就固定;但超出容器时，不固定。
+			</div>
+		</div>
+		<div class="side" id="j_side">
+			<div class="side-mod">side</div>
+			<div class="side-mod"></div>
+			<div class="side-mod"></div>
+		</div>
+	</div>
+	<div class="footer" id="j_footer">
+		footer
+	</div>
+			<script type="text/javascript">
+				(function(){
+					var byId = function(id){
+						return document.getElementById(id);
+					};
+					var cont = byId('j_list');
+					var demo = byId('j_cont_demo');
+					var S1 = new ScrollFix(demo,{
+						fixed:function(wrap,scrollTop,offsetTop,top){
+							// 固定条件
+						    return (scrollTop > offsetTop)&&(scrollTop < cont.offsetTop+cont.offsetHeight-demo.offsetHeight);
+						}
+					});
+				})();
+			</script>
+</body>
+</html>
