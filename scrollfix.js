@@ -66,7 +66,6 @@ window.ScrollFix = (function($) {
       getTop: function(wrap) {
         return 0;
       },
-      getLeft: function(wrap) {},
       // 获取容器高度，有可能
       getHeight: function(wrap) {
         return wrap.offsetHeight;
@@ -132,11 +131,17 @@ window.ScrollFix = (function($) {
           addClass(wrap, fixedClz);
 
           setStyles(wrap, {
+            position:'fixed',
             top: top + 'px',
             left: left + 'px'
           });
           config.onFix(wrap);
         } else {
+            setStyles(wrap,{
+                position:'',
+                top:'',
+                left:''
+            });
           toggle(false);
           removeClass(wrap, fixedClz);
           config.onUnFix(wrap);
