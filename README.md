@@ -20,6 +20,11 @@
 var S1 = new ScrollFix(document.getElementById('header'));
 ```
 
+## 示例 
+- [简单固定](http://chancedai.github.io/scrollFix/demo/1.html)
+- [根据自定义条件固定1](http://chancedai.github.io/scrollFix/demo/2.html)
+- [根据自定义条件固定2](http://chancedai.github.io/scrollFix/demo/3.html)
+- [使用unfix接口](http://chancedai.github.io/scrollFix/demo/4.html)
 
 ## 配置选项
 
