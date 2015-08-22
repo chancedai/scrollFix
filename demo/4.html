@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>title</title>
+    <style type="text/css">
+	    .clearfix:after{content:'.';display:block;height:0;clear:both;visibility: hidden;}
+	    .clearfix{*zoom:1;}
+   		body{font-size: 12px;color:#000;line-height: 1.5em;margin:0;padding:0;}
+		.wrap{margin:0 auto;width:1000px;}
+		.cont{float: left;width:700px;height:2000px;border:1px solid #000;}
+		.side{float: right;width:280px;}
+		.side-mod{height:300px;border:1px solid #000;margin:0 0 20px 0;}
+		.footer{width: 998px;margin:20px auto;height:800px;border:1px solid #000;}
+		.header{color:red;width:998px;line-height: 50px;text-align: center;color:#fff;border:1px solid #000;margin-bottom:50px;background: rgba(0,0,0,0.5)}
+		.header a{float: right;height:50px;background: #333;color:#fff !important;padding: 0 10px;text-decoration: none;}
+		.header a:hover{background: #444;}
+
+		.fixed{position: fixed;top:0;}
+    </style>
+    <script type="text/javascript" src="../scrollfix.js"></script>
+</head>
+<body>
+	<div class="wrap clearfix">
+		<div class="header" id="j_header">
+			头部固定
+			<a href="javascript:;" id="j_close">不再固定</a>
+		</div>
+		<div class="cont">
+			cont
+		</div>
+		<div class="side" id="j_side">
+			<div class="side-mod">side</div>
+			<div class="side-mod"></div>
+			<div class="side-mod"></div>
+		</div>
+	</div>
+	<div class="footer" id="j_footer">
+		footer
+	</div>
+			<script type="text/javascript">
+				(function(){
+					var byId = function(id){
+						return document.getElementById(id);
+					};
+					var close = byId('j_close');
+					var header = byId('j_header');
+					S1 = new ScrollFix(header);
+					close.onclick = function(){
+						S1.unFix();
+					};
+				})();
+			</script>
+</body>
+</html>

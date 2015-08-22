@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>title</title>
+    <style type="text/css">
+	    .clearfix:after{content:'.';display:block;height:0;clear:both;visibility: hidden;}
+	    .clearfix{*zoom:1;}
+   		body{font-size: 12px;color:#000;line-height: 1.5em;}
+		.wrap{margin:0 auto;width:1000px;}
+		.cont{float: left;width:700px;height:2000px;border:1px solid #000;}
+		.side{float: right;width:280px;}
+		.side-mod{height:300px;border:1px solid #000;margin:0 0 20px 0;}
+		.footer{width: 998px;margin:20px auto;height:800px;border:1px solid #000;}
+		#j_side_demo{color:red;}
+
+		.fixed{width:278px;position: fixed;top:0;}
+    </style>
+    <script type="text/javascript" src="../scrollfix.js"></script>
+</head>
+<body>
+	<div class="wrap clearfix">
+		<div class="cont">
+			cont
+		</div>
+		<div class="side" id="j_side">
+			<div class="side-mod">side</div>
+			<div class="side-mod" id="j_side_demo">
+				<ol>
+					<li>当页面滚动到某一高度时（如滚动到side的底部时），我才固定；让用户可以看完所有side内容</li>
+					<li>当页面滚动到我的底部碰到footer时，不再固定，以防我和footer重叠</li>
+				</ol>
+			</div>
+			<div class="side-mod"></div>
+			<div class="side-mod"></div>
+		</div>
+	</div>
+	<div class="footer" id="j_footer">
+		footer
+	</div>
+			<script type="text/javascript">
+				(function(){
+					var byId = function(id){
+						return document.getElementById(id);
+					};
+					var demo = byId('j_side_demo');
+					var footer = byId('j_footer');
+					var side = byId('j_side');
+					var S1 = new ScrollFix(demo,{
+						fixed:function(wrap,scrollTop,offsetTop,top){
+							// 固定条件
+						    return (scrollTop > side.offsetTop+side.offsetHeight)&&!(scrollTop+wrap.offsetHeight > footer.offsetTop-50);
+						}
+					});
+				})();
+			</script>
+</body>
+</html>
