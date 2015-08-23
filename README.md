@@ -24,7 +24,7 @@ var S1 = new ScrollFix(document.getElementById('header'));
 - [简单固定](http://chancedai.github.io/scrollFix/demo/1.html)
 - [根据自定义条件固定1](http://chancedai.github.io/scrollFix/demo/2.html)
 - [根据自定义条件固定2](http://chancedai.github.io/scrollFix/demo/3.html)
-- [使用unfix接口](http://chancedai.github.io/scrollFix/demo/4.html)
+- [使用fix,unfix接口](http://chancedai.github.io/scrollFix/demo/4.html)
 
 ## 配置选项
 
@@ -74,10 +74,7 @@ Scrollfix 只暴露两个简单接口：
 
 
 ## 浏览器支持
-Scrollfix支持IE7+所有浏览器;滚动固定，现存的方案，用户体验很差，帮强烈不支持IE6浏览器。
-
-## 谁在使用Scrollfix
-[sina](http://sina.com.cn) 下的众多业务
+Scrollfix支持IE7+所有浏览器;滚动固定，现存的方案，用户体验很差，故不支持IE6浏览器。
 
 
 ## License
