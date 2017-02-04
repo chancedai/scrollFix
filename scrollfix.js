@@ -1,5 +1,5 @@
-/** dc 20170204 */
-window.ScrollFix = (function($) {
+/** dc 201702041558 */
+window.ScrollFi = (function($) {
 
 	var extend = function(destination, source) {
 		for (var property in source) {
